@@ -1,0 +1,92 @@
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 100vw; 
+    height: 100vh;
+
+}
+
+.stats{
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 500px; 
+    height: 100vh; 
+    background-color: #FFC627;
+}
+
+.stats-content{
+    padding: 36px; 
+    text-align: left;
+font: normal normal normal 30px Arial;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+height: 100%
+}
+
+.figure{
+    position: absolute; 
+    top: 0px; 
+    left: 500px; 
+    padding: 36px;
+    min-width: 1000px;
+
+}
+
+.container{
+    padding: 36px; 
+    height: 80%;
+
+}
+
+.dataLabels {
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 20px;
+}
+
+h1{
+    text-align: left;
+    font: normal normal bold 72px Arial;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+} 
+
+.span-container{
+    margin-bottom: 12px;
+}
+
+.span-stat{
+    background-color: #000000;
+}
+
+.stat-primary{
+    font: normal normal bold 48px Arial;
+letter-spacing: 0px;
+color: #FFFFFF;
+background-color: #000000;
+margin-bottom: 1px;
+}
+
+.stat-caption{
+    font: normal normal normal bold 30px Arial;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background-color: #000000;
+
+}
+
+.yAxis{
+
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 24px;
+
+}
+
+.xAxis{
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 24px;
+}
