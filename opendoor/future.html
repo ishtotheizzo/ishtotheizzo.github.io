@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Decision Theater Plinko</title>
+        <link rel="stylesheet" href="style.css">
+
+
+    </head>
+    <body>
+        <div class="container">
+        <stats class="stats">
+            <div class="stats-content">
+                <br>The future isn’t certain, but we can experiment to see what different outcomes could be before we make a decision. </br>
+
+                <br>
+                <span class="span-container">
+                    <span class="stat-primary">
+                        Slot #
+                    </span><br/>
+
+                    <span class="stat-caption">
+                        One Line of Text
+                    </span>
+
+                </span></br>
+                <br>
+                <span class="span-container">
+                    <span class="stat-primary">
+                        Slot #
+                    </span><br/>
+
+                    <span class="stat-caption">
+                        One Line of Text
+                    </span>
+                </span></br>
+
+                <br>
+                <span class="span-container">
+                    <span class="stat-primary">
+                        Slot #
+                    </span><br/>
+
+                    <span class="stat-caption">
+                        One Line of Text
+                    </span>
+                </span></br>
+
+
+                <br>
+                <span class="span-container">
+                    <span class="stat-primary">
+                        Slot #
+                    </span><br/>
+
+                    <span class="stat-caption">
+                        One Line of Text
+                    </span>
+                </span></br>
+
+                
+             </div>
+
+        </stats>
+
+        <div class="figure">
+
+            <h1>What Prize Could You Get? </h1>
+
+            <div id="container">
+
+            </div>
+
+        </div>
+    </div>
+    </body>
+    <script src="matter.js"></script>
+
+<script>
+// module aliases
+var Engine = Matter.Engine,
+    Render = Matter.Render,
+    Runner = Matter.Runner,
+    Bodies = Matter.Bodies,
+    Composite = Matter.Composite;
+
+// create an engine
+var engine = Engine.create();
+
+// create a renderer
+var render = Render.create({
+    element:document.getElementById("container"),
+    engine: engine
+});
+
+// create two boxes and a ground
+var boxA = Bodies.rectangle(400, 200, 80, 80);
+var boxB = Bodies.rectangle(450, 50, 80, 80);
+var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
+
+// add all of the bodies to the world
+Composite.add(engine.world, [boxA, boxB, ground]);
+
+// run the renderer
+Render.run(render);
+
+// create runner
+var runner = Runner.create();
+
+// run the engine
+Runner.run(runner, engine);
+</script>
+</html>
