@@ -5,8 +5,10 @@ body {
 .container{
     width: 100vw; 
     height: 100vh;
+    padding: 36px; 
 
 }
+
 
 .stats{
     position: absolute; 
@@ -20,7 +22,7 @@ body {
 .stats-content{
     padding: 36px; 
     text-align: left;
-font: normal normal normal 30px Arial;
+font: normal normal normal 24px Arial;
 letter-spacing: 0px;
 color: #000000;
 opacity: 1;
@@ -32,15 +34,10 @@ height: 100%
     top: 0px; 
     left: 500px; 
     padding: 36px;
-    min-width: 1000px;
+    min-width: 900px;
 
 }
 
-.container{
-    padding: 36px; 
-    height: 80%;
-
-}
 
 .dataLabels {
     font-family: Arial, Helvetica, sans-serif; 
@@ -49,7 +46,7 @@ height: 100%
 
 h1{
     text-align: left;
-    font: normal normal bold 72px Arial;
+    font: normal normal bold 52px Arial;
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
@@ -57,6 +54,7 @@ h1{
 
 .span-container{
     margin-bottom: 12px;
+    line-height: 29px;
 }
 
 .span-stat{
@@ -65,7 +63,6 @@ h1{
 
 .stat-primary{
     font: normal normal bold 48px Arial;
-letter-spacing: 0px;
 color: #FFFFFF;
 background-color: #000000;
 margin-bottom: 1px;
@@ -89,4 +86,6 @@ margin-bottom: 1px;
 .xAxis{
     font-family: Arial, Helvetica, sans-serif; 
     font-size: 24px;
+    
 }
+
