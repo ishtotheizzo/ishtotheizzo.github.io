@@ -80,6 +80,9 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <script>
+    // slots on top 
+    // prizes are A - H 
+    // slots are 1-
     // Substring template helper for the responsive labels
 Highcharts.Templating.helpers.substr = (s, from, length) =>
     s.substr(from, length);
@@ -90,7 +93,8 @@ Highcharts.chart('container', {
     chart: {
         type: 'heatmap',
         plotBorderWidth: 0,
-    height: 500   },
+        height: 600,
+},
 
     credits: {
         enabled: false
@@ -109,14 +113,15 @@ Highcharts.chart('container', {
     }, 
 
     xAxis: {
-        categories: ['Slot #1', 'Slot #2', 'Slot #3', 'Slot #4', 'Slot #5'],
-        className:  'xAxis'
+        categories: ['Slot #1', 'Slot #2', 'Slot #3', 'Slot #4', 'Slot #5', 'Slot #6', 'Slot #7', 'Slot #8'],
+        className:  'xAxis',
+        opposite: true 
 
     },
 
     yAxis: {
-        categories: ['Prize #1', 'Prize #2', 'Prize #3', 'Prize #4', 'Prize #5'],
-        title: null,
+        categories: ['Prize A', 'Prize B', 'Prize C', 'Prize D', 'Prize E', 'Prize F', 'Prize G', 'Prize H'],
+        title: 'Prizes',
         reversed: true, 
         className:  'yAxis'
     },
@@ -136,7 +141,8 @@ Highcharts.chart('container', {
     },
 
     legend: {
-       enabled: false
+       enabled: false, 
+    
     },
 
     tooltip: {
@@ -148,11 +154,75 @@ Highcharts.chart('container', {
     series: [{
         name: '% Chance  to Get Prize',
         borderWidth: 1,
+
         borderColor: '#FFF',
-        data: [[0, 0, 10], [0, 1, 19], [0, 2, 8], [0, 3, 24], [0, 4, 67],
-            [1, 0, 92], [1, 1, 58], [1, 2, 78], [1, 3, 100], [1, 4, 48],
-            [2, 0, 35], [2, 1, 15], [2, 2, 100], [2, 3, 64], [2, 4, 52],
-            [3, 0, 72], [3, 1, 100], [3, 2, 100], [3, 3, 19], [3, 4, 16]],
+        // data structure is  [slot, prize, value]
+        data: [
+  [0,0,28.5  ],
+  [0,1,23.7  ],
+  [0,2,19.9  ],
+  [0,3,45.7  ],
+  [0,4,64.7  ],
+  [0,5,56.3  ],
+  [0,6,4.4  ],
+  [0,7,2.2  ],
+  [1,0,69.6  ],
+  [1,1,33.9  ],
+  [1,2,16  ],
+  [1,3,0.2  ],
+  [1,4,75.7  ],
+  [1,5,8.7  ],
+  [1,6,32.6  ],
+  [1,7,13.2  ],
+  [2,0,9.1  ],
+  [2,1,47.3  ],
+  [2,2,59.4  ],
+  [2,3,5.3  ],
+  [2,4,41.5  ],
+  [2,5,1.2  ],
+  [2,6,85.1  ],
+  [2,7,70.5  ],
+  [3,0,51.6  ],
+  [3,1,50.2  ],
+  [3,2,76.8  ],
+  [3,3,44.8  ],
+  [3,4,23.1  ],
+  [3,5,45.7  ],
+  [3,6,15.6  ],
+  [3,7,67.2  ],
+  [4,0,78  ],
+  [4,1,6.8  ],
+  [4,2,79.7  ],
+  [4,3,56.2  ],
+  [4,4,83.3  ],
+  [4,5,27.3  ],
+  [4,6,40.9  ],
+  [4,7,12.2  ],
+  [5,0,24.4  ],
+  [5,1,36.9  ],
+  [5,2,8.4  ],
+  [5,3,60  ],
+  [5,4,18  ],
+  [5,5,82.1  ],
+  [5,6,57.3  ],
+  [5,7,30.9  ],
+  [6,0,15.7  ],
+  [6,1,71.5  ],
+  [6,2,71  ],
+  [6,3,21.1  ],
+  [6,4,38  ],
+  [6,5,4.1  ],
+  [6,6,97  ],
+  [6,7,31.4  ],
+  [7,0,72.6  ],
+  [7,1,27  ],
+  [7,2,65.1  ],
+  [7,3,36.3  ],
+  [7,4,70.8  ],
+  [7,5,86  ],
+  [7,6,19.9  ],
+  [7,7,60.1  ]
+],
         dataLabels: {
             enabled: true,
             className: 'dataLabels', 
