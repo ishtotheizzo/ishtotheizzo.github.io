@@ -119,7 +119,14 @@ Highcharts.chart('container', {
     xAxis: {
         categories: ['Slot 1', 'Slot 2', 'Slot 3', 'Slot 4', 'Slot 5', 'Slot 6', 'Slot 7', 'Slot 8', 'Any Slot'],
         className:  'xAxis',
-        opposite: true 
+        opposite: true, 
+        plotBands: [{
+        from: 8,
+        to: 9,
+        color: 'none',
+        borderColor: 'black',
+        borderWidth: 3
+    }]
 
     },
 
