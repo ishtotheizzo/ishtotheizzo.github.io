@@ -1,13 +1,30 @@
 body { 
     font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh; 
+    margin: 0 0;
 }
 
 .container{
     width: 100vw; 
     height: 100vh;
     padding: 36px; 
+    display: block; 
 
 }
+
+.accordion { 
+    background-color: #FFC627;
+    color: black; 
+    border-radius: 25px;
+    padding: 12px; 
+    border: 0px white; 
+    font-weight: bolder;
+    
+    
+}
+/** This section is for the PRESENT DAY view. **/
+
 
 
 .stats{
@@ -34,7 +51,7 @@ height: 100%
     top: 0px; 
     left: 500px; 
     padding: 36px;
-    min-width: 1000px;
+    min-width: 950px;
 
 }
 
@@ -89,3 +106,106 @@ margin-bottom: 1px;
     
 }
 
+
+
+/** This section is for the FUTURE STATE view. **/
+
+
+
+.content-future{
+
+    width: calc(100% - 0px);
+    height: 100%; 
+    background-color: #FFC627;
+
+
+}
+
+#letter-content{
+
+    margin: auto; 
+    width: 50%; 
+    padding: 72px; 
+
+}
+
+.grid {
+    width: 100%;
+
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    gap: 0px; /* Adjust the gap as needed */
+    border: 0px solid black; /* Border for the grid container */
+    width: 600px;
+    place-items: center;
+    padding: 20px;
+    margin: 10px;
+  
+
+    
+}
+
+.spacer{
+    width: 100%; 
+    min-height: 72px; 
+}
+
+.cell {
+    background-color: rgb(255, 255, 255); /* Default cell background color */
+    border: .5px solid black; /* Border for each cell */
+    text-align: center; /* Center align text */
+    width: 6.25vw; 
+    height: 6vh;
+}
+
+.prize {
+    background-color: rgb(255, 255, 255); /* Default cell background color */
+    border: .5px solid black; /* Border for each cell */
+    text-align: center; /* Center align text */
+    width: 12vw; 
+    height: 6vh;
+}
+
+h2 {
+    
+        font: normal normal normal bold 30px Arial;
+        letter-spacing: 0px;
+        color: #000000;
+    
+    }
+
+    #remove-peg{
+        font: normal normal normal bold 30px Arial;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        background-color: #000000;
+    
+    }
+
+    #add-peg{
+        font: normal normal normal bold 30px Arial;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        background-color: #000000;
+    
+    }
+
+    #slot-drop{
+        font: normal normal normal bold 30px Arial;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        background-color: #000000;
+    
+    }
+
+    #prize{
+        font: normal normal normal bold 30px Arial;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        background-color: #000000;
+    
+    }
