@@ -102,7 +102,7 @@
                 let features = geoJsonFeatureCollection.features
 
                 for (let x = 0; x < features.length; x++) {
-                    var circle = L.circleMarker([features[x].properties.s_lat, features[x].properties.s_lon], {
+                    var circle = L.circleMarker([features[x].properties.e_lat, features[x].properties.e_lon], {
                         radius: 3,
                         color: 'rgba(209, 0, 101, 1)',
                         fillColor: 'rgba(209, 0, 101, 1)',
@@ -112,23 +112,31 @@
 
                 }
 
+                oneToManyFlowmapLayer.on('click', function (e) {
+                    if (e.sharedOriginFeatures.length) {
+                        oneToManyFlowmapLayer.selectFeaturesForPathDisplay(e.sharedOriginFeatures, 'SELECTION_NEW');
+                    }
+                    if (e.sharedDestinationFeatures.length) {
+                        oneToManyFlowmapLayer.selectFeaturesForPathDisplay(e.sharedDestinationFeatures, 'SELECTION_NEW');
+                    }
+                });
 
                 //set a default
                 oneToManyFlowmapLayer.selectFeaturesForPathDisplayById('s_city_id', 451, true, 'SELECTION_NEW');
 
                 document.getElementById('flows').addEventListener('click', function () {
 
+
                     oneToManyFlowmapLayer.selectFeaturesForPathDisplayById('s_city_id', 451, true, 'SELECTION_NEW')
+                    hide = true;
 
                 })
 
-                document.getElementById('routes').addEventListener('click', function () {
-                    oneToManyFlowmapLayer.selectAllFeaturesForPathDisplay();
 
-                })
 
                 document.getElementById('routes').addEventListener('click', function () {
                     oneToManyFlowmapLayer.selectAllFeaturesForPathDisplay();
+                    hide = false;
 
                 })
 
@@ -137,24 +145,24 @@
 
 
                     console.log(hide)
-                        try {
-                            const response = await fetch(fileName);
+                    try {
+                        const response = await fetch(fileName);
 
-                            if (!response.ok) {
-                                throw new Error(`Response status: ${response.status}`);
-                            }
+                        if (!response.ok) {
+                            throw new Error(`Response status: ${response.status}`);
+                        }
 
-                            // I got my server PROMISE, let's UNWRAP
-                            console.log(response);
-                            const json = await response.json();
-                            console.log(json.features);
-                            if(hide){
-                             location.reload(); 
-                            }
+                        // I got my server PROMISE, let's UNWRAP
+                        console.log(response);
+                        const json = await response.json();
+                        console.log(json.features);
+                        if (hide) {
+                            location.reload();
+                        }
 
-                            else{
-                                for (let x in json.features) { 
-                                    var markers = L.circleMarker([json.features[x].geometry.coordinates[1],json.features[x].geometry.coordinates[0]], {
+                        else {
+                            for (let x in json.features) {
+                                var markers = L.circleMarker([json.features[x].geometry.coordinates[1], json.features[x].geometry.coordinates[0]], {
                                     radius: 4,
                                     color: 'red',
                                     fillColor: 'red',
@@ -165,13 +173,13 @@
                             hide = true;
                         }
 
-                        } catch (error) {
-                            console.error(error.message);
-                        }
-                        
-                    
+                    } catch (error) {
+                        console.error(error.message);
+                    }
+
+
                 })
-            
+
             }
 
         });
