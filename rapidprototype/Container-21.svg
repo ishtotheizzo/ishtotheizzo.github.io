@@ -1,9 +1,0 @@
-<svg id="Container" xmlns="http://www.w3.org/2000/svg" width="124" height="21" viewBox="0 0 124 21">
-  <rect id="Fill" width="124" height="21" rx="10.5" transform="translate(0)" opacity="0"/>
-  <g id="Surfaces_Paper_Variant_Round" data-name="Surfaces / Paper / Variant / Round" transform="translate(0)">
-    <g id="Rectangle" transform="translate(0)" fill="none" stroke="rgba(0,0,0,0.23)" stroke-miterlimit="10" stroke-width="1">
-      <rect width="124" height="21" rx="10.5" stroke="none"/>
-      <rect x="0.5" y="0.5" width="123" height="20" rx="10" fill="none"/>
-    </g>
-  </g>
-</svg>
