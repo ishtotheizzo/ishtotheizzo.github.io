@@ -19,6 +19,13 @@
             padding: 0px;
         }
 
+        .my-div-icon{
+            width: 15px; 
+            height: 15px; 
+            background: url('./icon.svg');
+            border-radius: 50%;
+        }
+
         .buttonGroup {}
 
         .buttonGroup>button {
@@ -101,12 +108,13 @@
 
                 let features = geoJsonFeatureCollection.features
 
+                var myIcon = L.divIcon({className: 'my-div-icon'});
+// you can set .my-div-icon styles in CSS
+
+
                 for (let x = 0; x < features.length; x++) {
-                    var circle = L.circleMarker([features[x].properties.e_lat, features[x].properties.e_lon], {
-                        radius: 3,
-                        color: 'rgba(209, 0, 101, 1)',
-                        fillColor: 'rgba(209, 0, 101, 1)',
-                        fillOpacity: 1,
+                    L.marker([features[x].properties.e_lat, features[x].properties.e_lon], {
+                        icon: myIcon
 
                     }).addTo(map);
 
