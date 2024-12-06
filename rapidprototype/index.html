@@ -19,12 +19,7 @@
             padding: 0px;
         }
 
-        .my-div-icon{
-            width: 15px; 
-            height: 15px; 
-            background: url('./icon.svg');
-            border-radius: 50%;
-        }
+      
 
         .buttonGroup {}
 
@@ -108,13 +103,21 @@
 
                 let features = geoJsonFeatureCollection.features
 
-                var myIcon = L.divIcon({className: 'my-div-icon'});
-// you can set .my-div-icon styles in CSS
+                var endIcons = L.icon({
+    iconUrl: './PortsEnd.svg',
+    iconSize: [25, 25],
+    
+});
+
+var poi = L.icon({
+    iconUrl: './ports.svg', 
+    iconSize: [36, 36]
+})
 
 
                 for (let x = 0; x < features.length; x++) {
                     L.marker([features[x].properties.e_lat, features[x].properties.e_lon], {
-                        icon: myIcon
+                        icon: endIcons
 
                     }).addTo(map);
 
@@ -170,11 +173,8 @@
 
                         else {
                             for (let x in json.features) {
-                                var markers = L.circleMarker([json.features[x].geometry.coordinates[1], json.features[x].geometry.coordinates[0]], {
-                                    radius: 4,
-                                    color: 'red',
-                                    fillColor: 'red',
-                                    fillOpacity: .5,
+                                L.marker([json.features[x].geometry.coordinates[1], json.features[x].geometry.coordinates[0]], {
+                                   icon: poi
 
                                 }).addTo(map);
                             }

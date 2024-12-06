@@ -1,3 +1,4 @@
+
 (function(factory, window) {
     // module loaders support for LeafletJS plugins, see:
     // https://github.com/Leaflet/Leaflet/blob/master/PLUGIN-GUIDE.md#module-loaders
@@ -22,7 +23,8 @@
   }(function(L) {
     // layer source code
     var canvasRenderer = L.canvas();
-  
+    var svgRenderer = L.svg();
+
     var CanvasFlowmapLayer = L.GeoJSON.extend({
       options: {
         // this is only a default option example,
@@ -94,13 +96,13 @@
   
           if (geoJsonFeature.properties.isOrigin) {
             return {
-              renderer: canvasRenderer, // recommended to use L.canvas()
-              radius: 10,
-              weight: 2,
-              color: 'white',
-              fillColor: '#4A92BF',
-              fillOpacity: 1,
-              strokeOpacity: .5
+                renderer: canvasRenderer,
+                radius: 30,
+                weight: 0.25,
+                color: 'rgb(17, 142, 170)',
+                fillColor: 'rgb(17, 142, 170)',
+                fillOpacity: 0.7, 
+                zIndex: 80
             };
           } else {
             return {
